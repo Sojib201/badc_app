@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 80),
+          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 90),
           child: Form(
             key: _formKey,
             child: Column(

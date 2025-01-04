@@ -45,17 +45,21 @@ class _splashScreenState extends State<splashScreen> {
             ),
           ),
           const Spacer(),
-          CircularProgressIndicator(
-            color: colorGolden,
+          SizedBox(
+            width: 90,
+            child: LinearProgressIndicator(
+              minHeight: 3,
+              backgroundColor: Colors.grey[300],
+              valueColor: const AlwaysStoppedAnimation(primaryGreen),
+            ),
           ),
-          const SizedBox(
-            height: 15,
-          ),
+          const Spacer(),
           const Text(
-            "Version 1.0.0",
+            "badc.com",
             style: TextStyle(
                 color: primaryGreen,
-                fontWeight: FontWeight.w400,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
                 letterSpacing: 0.6),
           ),
           const SizedBox(

@@ -19,6 +19,9 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  final TextEditingController _searchController = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,208 +93,193 @@ class _HomepageState extends State<Homepage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomCard(
-                      color: primaryGreen,
-                      label: 'বি‌ডি‌সি‌\'র সম্পর্কে',
-                      iconPath: "assets/employee.png",
-                      backgroundColor: Color(0xFFECE7A1),
-                      ontap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => BadcDetails(),
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              decoration: BoxDecoration(
+                color: ScaffoldBackGroundColor,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    blurRadius: 5,
+                    offset: Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: TextField(
+                controller: _searchController,
+                onChanged: (value) {
+                  setState(() {
+
+                  });
+                },
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.search, color: primaryGreen),
+                  hintText: 'অনুসন্ধান করুন...',
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Expanded(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: CustomCard(
+                            color: primaryGreen,
+                            label: 'বি‌ডি‌সি‌\'র সম্পর্কে',
+                            iconPath: "assets/employee.png",
+                            backgroundColor: Color(0xFFECE7A1),
+                            ontap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => BadcDetails(),
+                                ),
+                              );
+                            },
                           ),
-                        );
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Expanded(
-                    child: CustomCard(
-                      color: primaryGreen,
-                      label: 'বি‌ডি‌সি‌\'র সেবাসমূহ',
-                      iconColor: colorBlack,
-                      iconPath: "assets/customer-service.png",
-                      backgroundColor: Color(0xFFECE7A1),
-                      ontap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Sheba(),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Expanded(
+                          child: CustomCard(
+                            color: primaryGreen,
+                            label: 'বি‌ডি‌সি‌\'র সেবাসমূহ',
+                            iconColor: colorBlack,
+                            iconPath: "assets/customer-service.png",
+                            backgroundColor: Color(0xFFECE7A1),
+                            ontap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Sheba(),
+                                ),
+                              );
+                            },
                           ),
-                        );
-                      },
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomCard(
-                      color: primaryGreen,
-                      label: 'অফিস এবং বিভিন্ন স্থানসমূহ',
-                      iconPath: "assets/office-building.png",
-                      backgroundColor: Color(0xFFECE7A1),
-                      ontap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => OfficePlace(),
-                            ));
-                      },
+                    SizedBox(
+                      height: 20,
                     ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Expanded(
-                    child: CustomCard(
-                      color: primaryGreen,
-                      label: 'ইনোভেশন কার্যক্রম ও অর্জনসমূহ',
-                      iconPath: "assets/innovation.png",
-                      backgroundColor: Color(0xFFECE7A1),
-                      ontap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Innovation(),
-                            ));
-                      },
+                    Row(
+                      children: [
+                        Expanded(
+                          child: CustomCard(
+                            color: primaryGreen,
+                            label: 'অফিস এবং বিভিন্ন স্থানসমূহ',
+                            iconPath: "assets/office-building.png",
+                            backgroundColor: Color(0xFFECE7A1),
+                            ontap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => OfficePlace(),
+                                  ));
+                            },
+                          ),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Expanded(
+                          child: CustomCard(
+                            color: primaryGreen,
+                            label: 'ইনোভেশন কার্যক্রম ও অর্জনসমূহ',
+                            iconPath: "assets/innovation.png",
+                            backgroundColor: Color(0xFFECE7A1),
+                            ontap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Innovation(),
+                                  ));
+                            },
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomCard(
-                      color: primaryGreen,
-                      label: 'বাস্তবায়নী প্রকল্প ও কার্যক্রম',
-                      iconPath: "assets/agricultural.png",
-                      backgroundColor: Color(0xFFECE7A1),
-                      ontap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ImplementationProjects(),
-                            ));
-                      },
+                    SizedBox(
+                      height: 20,
                     ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Expanded(
-                    child: CustomCard(
-                      color: primaryGreen,
-                      label: 'যোগাযোগ',
-                      iconPath: "assets/communication.png",
-                      backgroundColor: Color(0xFFECE7A1),
-                      ontap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Communication(),
-                            ));
-                      },
+                    Row(
+                      children: [
+                        Expanded(
+                          child: CustomCard(
+                            color: primaryGreen,
+                            label: 'বাস্তবায়নী প্রকল্প ও কার্যক্রম',
+                            iconPath: "assets/agricultural.png",
+                            backgroundColor: Color(0xFFECE7A1),
+                            ontap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        ImplementationProjects(),
+                                  ));
+                            },
+                          ),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Expanded(
+                          child: CustomCard(
+                            color: primaryGreen,
+                            label: 'যোগাযোগ',
+                            iconPath: "assets/communication.png",
+                            backgroundColor: Color(0xFFECE7A1),
+                            ontap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Communication(),
+                                  ));
+                            },
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomCard(
-                      color: primaryGreen,
-                      label: 'ফিডব্যাক',
-                      iconSize: 50,
-                      iconPath: "assets/feedback.png",
-                      backgroundColor: Color(0xFFECE7A1),
-                      ontap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => feedback(),
-                            ));
-                      },
+                    SizedBox(
+                      height: 20,
                     ),
-                  ),
-                ],
+                    Row(
+                      children: [
+                        Expanded(
+                          child: CustomCard(
+                            color: primaryGreen,
+                            label: 'ফিডব্যাক',
+                            iconSize: 50,
+                            iconPath: "assets/feedback.png",
+                            backgroundColor: Color(0xFFECE7A1),
+                            ontap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => feedback(),
+                                  ));
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ],
-          ),
+            )
+          ],
         ),
       ),
-
-      // body: Center(
-      //   child: Column(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: [
-      //       ElevatedButton(
-      //         onPressed: () {},
-      //         child: Text('১.বি‌ডি‌সি‌\'র সম্পর্ক (ভিশন এবং মিশন)'),
-      //
-      //       ),
-      //       SizedBox(height: 10,),
-      //       ElevatedButton(
-      //         onPressed: () {},
-      //         child: Text('২. বি‌ডি‌সি‌\'র সেবাসমূহ'),
-      //
-      //       ),
-      //       SizedBox(height: 10,),
-      //       ElevatedButton(
-      //         onPressed: () {},
-      //         child: Text('৩.অফিস এবং বিভিন্ন স্থানসমূহ (With Geo Location)'),
-      //
-      //       ),
-      //       SizedBox(height: 10,),
-      //       ElevatedButton(
-      //         onPressed: () {},
-      //         child: Text('৪. ইনোভেশন কার্যক্রম ও অর্জনসমূহ'),
-      //
-      //       ),
-      //       SizedBox(height: 10,),
-      //       ElevatedButton(
-      //         onPressed: () {},
-      //         child: Text('৫.বাস্তবায়নী প্রকল্প ও কার্যক্রম'),
-      //
-      //       ),
-      //       SizedBox(height: 10,),
-      //       ElevatedButton(
-      //         onPressed: () {},
-      //         child: Text('৬.যোগাযোগ'),
-      //
-      //       ),
-      //       SizedBox(height: 10,),
-      //       ElevatedButton(
-      //         onPressed: () {},
-      //         child: Text('৭.ফিডব্যাক'),
-      //
-      //       ),
-      //
-      //     ],
-      //   ),
-      // ),
     );
   }
 }
