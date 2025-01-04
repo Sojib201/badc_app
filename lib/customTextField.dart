@@ -1,7 +1,9 @@
+import 'package:badc_app/style.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final Color? focusColor;
+
   final double? borderRadiusCircular;
   final Color? borderSideColor;
   final Color? fillColor;
@@ -33,8 +35,9 @@ class CustomTextFormField extends StatelessWidget {
     this.isObsecureText = false,
     this.fillColor,
     this.filled,
-    this.borderSideColor=Colors.grey,
-    this.borderRadiusCircular=12, this.focusColor=Colors.green,
+    this.borderSideColor = Colors.grey,
+    this.borderRadiusCircular = 12,
+    this.focusColor = Colors.green,
   }) : super(key: key);
 
   @override
@@ -48,6 +51,12 @@ class CustomTextFormField extends StatelessWidget {
       onSaved: onSaved,
       validator: validator,
       decoration: InputDecoration(
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadiusCircular!),
+          borderSide: BorderSide(color: borderSideColor!),
+        ),
+        prefixIconColor: colorGolden,
+        suffixIconColor: colorGolden,
         fillColor: fillColor,
         filled: filled,
         focusedBorder: OutlineInputBorder(
@@ -58,6 +67,8 @@ class CustomTextFormField extends StatelessWidget {
         suffixIcon: isPassword ? suffixIconButton : null,
         labelText: label,
         hintText: hint,
+        hintStyle: TextStyle(color: primaryGreen.withOpacity(0.6)),
+        labelStyle: TextStyle(color: primaryGreen.withOpacity(0.6)),
         prefixIcon: Icon(prefixIcon),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(borderRadiusCircular!),

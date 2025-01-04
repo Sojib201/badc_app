@@ -1,7 +1,9 @@
+import 'package:badc_app/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'CustomCard.dart';
+import 'loginScreen.dart';
 
 class SeedsService extends StatefulWidget {
   const SeedsService({super.key});
@@ -14,7 +16,31 @@ class _SeedsServiceState extends State<SeedsService> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoginScreen(),
+                ),
+              );
+            },
+            color: ScaffoldBackGroundColor,
+            icon: Icon(
+              Icons.logout,
+            ),
+          ),
+        ],
+        foregroundColor: ScaffoldBackGroundColor,
+        backgroundColor: primaryGreen,
+        centerTitle: true,
+        title: Text(
+          'হোম পেজ',
+          style: TextStyle(color: ScaffoldBackGroundColor),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: SingleChildScrollView(

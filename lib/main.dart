@@ -1,4 +1,5 @@
 import 'package:badc_app/splashScreen.dart';
+import 'package:badc_app/style.dart';
 import 'package:flutter/material.dart';
 
 import 'loginScreen.dart';
@@ -15,12 +16,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'BDAC ',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        scaffoldBackgroundColor: ScaffoldBackGroundColor,
+        //colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: splashScreen(),
+      home: const splashScreen(),
     );
   }
 }

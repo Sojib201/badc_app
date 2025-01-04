@@ -1,7 +1,9 @@
+import 'package:badc_app/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'CustomCard.dart';
+import 'loginScreen.dart';
 
 class Innovation extends StatefulWidget {
   const Innovation({super.key});
@@ -15,7 +17,29 @@ class _InnovationState extends State<Innovation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoginScreen(),
+                ),
+              );
+            },
+            color: ScaffoldBackGroundColor,
+            icon: Icon(
+              Icons.logout,
+            ),
+          ),
+        ],
+        foregroundColor: ScaffoldBackGroundColor,
+        backgroundColor: primaryGreen,
+        centerTitle: true,
+        title: Text(
+          'ইনোভেশন কার্যক্রম ও অর্জনসমূহ',
+          style: TextStyle(color: ScaffoldBackGroundColor),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
@@ -27,9 +51,10 @@ class _InnovationState extends State<Innovation> {
                 children: [
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'বিভিন্ন ইনোভেটিভ কার্যক্রম',
-                      iconPath: "",
-                      backgroundColor: Color(0xFFECD2A1),
+                      iconPath: "assets/employee.png",
+                      backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
                     ),
                   ),
@@ -38,8 +63,9 @@ class _InnovationState extends State<Innovation> {
                   ),
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'বি‌ডি‌সি‌\'র সহজিকৃত/ডিজিটালাইজড সেবাসমূহের তালিকা ও লিংক',
-                      iconPath: "",
+                      iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
                     ),
@@ -54,10 +80,11 @@ class _InnovationState extends State<Innovation> {
                 children: [
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'কৃষিক্ষেত্রে বিএডিসি\'র অর্জনসমূহ',
-                      iconPath: "",
+                      iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
-                      ontap: () async {},
+                      ontap: () {},
                     ),
                   ),
                 ],

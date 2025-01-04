@@ -1,7 +1,9 @@
 import 'package:badc_app/seeds_service.dart';
+import 'package:badc_app/style.dart';
 import 'package:flutter/material.dart';
 
 import 'CustomCard.dart';
+import 'loginScreen.dart';
 
 class Sheba extends StatefulWidget {
   const Sheba({super.key});
@@ -14,7 +16,31 @@ class _ShebaState extends State<Sheba> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoginScreen(),
+                ),
+              );
+            },
+            color: ScaffoldBackGroundColor,
+            icon: Icon(
+              Icons.logout,
+            ),
+          ),
+        ],
+        foregroundColor: ScaffoldBackGroundColor,
+        backgroundColor: primaryGreen,
+        centerTitle: true,
+        title: Text(
+            'বি‌ডি‌সি‌\'র সেবাসমূহ',
+          style: TextStyle(color: ScaffoldBackGroundColor),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: SingleChildScrollView(
@@ -25,16 +51,11 @@ class _ShebaState extends State<Sheba> {
                 children: [
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'বীজ ও উদ্যান সংক্রান্ত সেবা',
-                      iconPath: "",
-                      backgroundColor: Color(0xFFECD2A1),
-                      ontap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SeedsService(),
-                            ));
-                      },
+                      iconPath: "assets/employee.png",
+                      backgroundColor: Color(0xFFECE7A1),
+                      ontap: () {},
                     ),
                   ),
                   SizedBox(
@@ -42,8 +63,9 @@ class _ShebaState extends State<Sheba> {
                   ),
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'সার সংক্রান্ত সেবা',
-                      iconPath: "",
+                      iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
                     ),
@@ -57,9 +79,10 @@ class _ShebaState extends State<Sheba> {
                 children: [
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'সেচ সংক্রান্ত সেবা',
-                      iconPath: "",
-                      backgroundColor: Color(0xFFECD2A1),
+                      iconPath: "assets/employee.png",
+                      backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
                     ),
                   ),
@@ -68,10 +91,11 @@ class _ShebaState extends State<Sheba> {
                   ),
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'দাপ্তরিক অন্যান্য সেবা',
-                      iconPath: "",
+                      iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
-                      ontap: () async {},
+                      ontap: () {},
                     ),
                   ),
                 ],

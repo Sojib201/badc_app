@@ -36,9 +36,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (isValid) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Login successful!')),
+        SnackBar(
+          content: Text('Login successful!'),
+        ),
       );
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage(),));
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Homepage(),
+        ),
+      );
     }
   }
 
@@ -76,22 +83,21 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
-                  height: 20,
+                const SizedBox(
+                  height: 30,
                 ),
-                Container(
-                  child: Image.asset(
-                    'assets/logo.png',
-                    //color: colorLightGray,
-                    height: 150,
-                    width: 200,
-                  ),
+                Image.asset(
+                  fit: BoxFit.fill,
+                  'assets/logo.png',
+                  //color: colorLightGray,
+                  height: 180,
+                  width: 180,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Text(
-                  "Get Started With",
+                  "গণপ্রজাতন্ত্রী বাংলাদেশ সরকার",
                   style: Head1Text(colorDarkBlue),
                 ),
                 SizedBox(
@@ -113,9 +119,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     emailErrorMessage = value;
                     _formKey.currentState?.validate();
                   },
-                  borderSideColor: Colors.grey,
-                  label: 'Email',
-                  hint: 'Email',
+                  borderRadiusCircular: 8,
+                  borderSideColor: primaryGreen,
+                  focusColor: primaryGreen,
+                  label: 'ইমেইল',
+                  hint: 'ইমেইল',
                   prefixIcon: Icons.email,
                   controller: emailController,
                   inputType: TextInputType.emailAddress,
@@ -130,17 +138,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 //     emailErrorMessage!,
                 //     style: TextStyle(color: Colors.red),
                 //   ),
-                SizedBox(height: 20),
+                const SizedBox(height: 25),
                 //
                 CustomTextFormField(
+                  focusColor: primaryGreen,
                   onChanged: (value) {
                     //_validatePassword(value);
                     passwordErrorMessage = value;
                     _formKey.currentState?.validate();
                   },
-                  borderSideColor: Colors.green,
-                  label: 'Password',
-                  hint: 'Password',
+                  borderSideColor: primaryGreen,
+                  label: 'পাসওয়ার্ড',
+                  hint: 'পাসওয়ার্ড',
                   isPassword: true,
                   prefixIcon: Icons.lock,
                   controller: passwordController,
@@ -156,6 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       });
                     },
                   ),
+                  borderRadiusCircular: 8,
                   isObsecureText: _isPasswordVisible,
                   validator: (_) {
                     _validatePassword(passwordController.text);
@@ -168,89 +178,100 @@ class _LoginScreenState extends State<LoginScreen> {
                 //     passwordErrorMessage!,
                 //     style: TextStyle(color: Colors.red),
                 //   ),
-                SizedBox(
-                  height: 10,
-                ),
-                SizedBox(
-                  height: 20,
+
+                const SizedBox(
+                  height: 18,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 243),
+                  padding: const EdgeInsets.only(left: 190),
                   child: InkWell(
                     onTap: () {},
                     child: Text(
-                      "Forgot Password?",
-                      style: HeadText7(colorLightGray),
+                      "পাসওয়ার্ড ভুলে গেছেন?",
+                      style: HeadText6(colorLightGray),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 ElevatedButton(
                   onPressed: () {
                     _login();
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Homepage(),
+                      ),
+                      (route) => false,
+                    );
                   },
-                  child: SuccessButtonChild("Login"),
                   style: AppButtonStyle(),
+                  child: SuccessButtonChild(
+                    "লগইন",
+                  ),
                 ),
-                SizedBox(
-                  height: 30,
+
+                const SizedBox(
+                  height: 16,
                 ),
                 Container(
-                    alignment: Alignment.center,
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 45,
+                  alignment: Alignment.center,
+                  child: Column(
+                    children: [
+                      Card(
+                        color: Colors.transparent,
+                        elevation: 0,
+                        child: Container(
+                          height: 48,
                           decoration: BoxDecoration(
-                            border: Border.all(color: colorLightGray),
-                            color: colorWhite,
-                            borderRadius: BorderRadius.circular(6),
+                            border: Border.all(color: primaryGreen),
+                            //color: colorWhite,
+                            borderRadius: BorderRadius.circular(8),
                           ),
                           child: InkWell(
                             onTap: () {},
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Container(
-                                  child: Image.asset(
-                                    'assets/img.png',
-                                    height: 30,
-                                  ),
+                                Image.asset(
+                                  'assets/img.png',
+                                  height: 30,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Text(
-                                  'Sign in with Google',
-                                  style: HeadText7(colorDarkBlue),
+                                  'গুগল দিয়ে সাইন ইন করুন',
+                                  style: HeadText6(colorDarkBlue),
                                 ),
                               ],
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Don't have a account?",
-                              style: HeadText7(colorDarkBlue),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "অ্যাকাউন্ট নেই?",
+                            style: HeadText6(colorDarkBlue),
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: Text(
+                              " নিবন্ধন করুন",
+                              style: HeadText7(primaryGreen),
                             ),
-                            InkWell(
-                              onTap: () {},
-                              child: Text(
-                                "Register",
-                                style: HeadText7(colorDarkBlue),
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    )),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -259,167 +280,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-// import 'package:flutter/material.dart';
-// import 'package:login_screen/style.dart';
-//
-// class LoginScreen extends StatefulWidget {
-//   const LoginScreen({super.key});
-//
-//   @override
-//   State<LoginScreen> createState() => _LoginScreenState();
-// }
-//
-// class _LoginScreenState extends State<LoginScreen> {
-//   bool _isPasswordVisible = true;
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: SingleChildScrollView(
-//         child: Padding(
-//           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 80),
-//           child: Column(
-//             mainAxisAlignment: MainAxisAlignment.center,
-//             crossAxisAlignment: CrossAxisAlignment.center,
-//             children: [
-//               Container(
-//                 child: Image.asset(
-//                   'assets/login.png',
-//                   color: colorLightGray,
-//                   height: 100,
-//                   width: 200,
-//                 ),
-//               ),
-//               SizedBox(
-//                 height: 20,
-//               ),
-//               Text(
-//                 "Get Started With",
-//                 style: Head1Text(colorDarkBlue),
-//               ),
-//               SizedBox(
-//                 height: 40,
-//               ),
-//               TextFormField(
-//                 keyboardType: TextInputType.emailAddress,
-//                 decoration: EmailInputDeceration1(
-//                   "Email",
-//                   "Email",
-//                   Icon(Icons.email),
-//                 ),
-//               ),
-//               SizedBox(
-//                 height: 20,
-//               ),
-//               TextFormField(
-//                 decoration: PasswordInputDeceration(
-//                   "Password",
-//                   "Password",
-//                   Icon(Icons.lock),
-//                   IconButton(
-//                     icon: Icon(
-//                       _isPasswordVisible
-//                           ? Icons.visibility_off
-//                           : Icons.visibility,
-//                     ),
-//                     onPressed: () {
-//                       //_isPasswordVisible = !_isPasswordVisible;
-//                       if (_isPasswordVisible) {
-//                         _isPasswordVisible = false;
-//                       } else {
-//                         _isPasswordVisible = true;
-//                       }
-//                       setState(
-//                         () {},
-//                       );
-//                     },
-//                   ),
-//                 ),
-//                 obscureText: _isPasswordVisible,
-//               ),
-//               SizedBox(
-//                 height: 20,
-//               ),
-//               Padding(
-//                 padding: const EdgeInsets.only(left: 243),
-//                 child: InkWell(
-//                   onTap: () {},
-//                   child: Text(
-//                     "Forgot Password?",
-//                     style: HeadText7(colorLightGray),
-//                   ),
-//                 ),
-//               ),
-//               SizedBox(
-//                 height: 20,
-//               ),
-//               ElevatedButton(
-//                 onPressed: () {},
-//                 child: SuccessButtonChild("Login"),
-//                 style: AppButtonStyle(),
-//               ),
-//               SizedBox(
-//                 height: 30,
-//               ),
-//               Container(
-//                   alignment: Alignment.center,
-//                   child: Column(
-//                     children: [
-//                       Container(
-//                         height: 45,
-//                         decoration: BoxDecoration(
-//                           border: Border.all(color: colorGreen),
-//                           color: colorWhite,
-//                           borderRadius: BorderRadius.circular(6),
-//                         ),
-//                         child: InkWell(
-//                           onTap: () {},
-//                           child: Row(
-//                             mainAxisAlignment: MainAxisAlignment.center,
-//                             children: [
-//                               Container(
-//                                 child: Image.asset(
-//                                   'assets/img.png',
-//                                   height: 30,
-//                                 ),
-//                               ),
-//                               SizedBox(
-//                                 width: 10,
-//                               ),
-//                               Text(
-//                                 'Sign in with Google',
-//                                 style: HeadText7(colorDarkBlue),
-//                               ),
-//                             ],
-//                           ),
-//                         ),
-//                       ),
-//                       SizedBox(
-//                         height: 30,
-//                       ),
-//                       InkWell(
-//                         onTap: () {},
-//                         child: Row(
-//                           mainAxisAlignment: MainAxisAlignment.center,
-//                           children: [
-//                             Text(
-//                               "Don't have a account?",
-//                               style: HeadText7(colorDarkBlue),
-//                             ),
-//                             Text(
-//                               "Register",
-//                               style: HeadText7(colorGreen),
-//                             ),
-//                           ],
-//                         ),
-//                       )
-//                     ],
-//                   )),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }

@@ -1,27 +1,36 @@
+import 'dart:ffi';
+
+import 'package:badc_app/style.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
+  final double? iconSize;
   final Color? color;
+  final Color? iconColor;
   final VoidCallback? ontap;
   final String? iconPath;
   final String? label;
   final Color? backgroundColor;
+
   const CustomCard(
       {this.ontap,
       this.color,
       this.iconPath,
       this.label,
-      this.backgroundColor});
+      this.backgroundColor,
+      this.iconColor,
+      this.iconSize});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: ontap,
       child: Container(
+        padding: EdgeInsets.only(top: 12),
         height: 150,
         width: 150,
         decoration: BoxDecoration(
-          color: Colors.green,
+          color: color,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
@@ -35,29 +44,39 @@ class CustomCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: 65,
-              height: 65,
+              width: 80,
+              height: 80,
               decoration: BoxDecoration(
                 color: backgroundColor,
                 shape: BoxShape.circle,
               ),
               child: Padding(
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.all(14),
                 child: Image.asset(
+                  height: iconSize,
+                  width: iconSize,
                   iconPath!,
+                  color: iconColor,
                   fit: BoxFit.contain,
                 ),
               ),
             ),
-            SizedBox(height: 12),
-            Text(
-              label!,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16),
-              //style: TEXTSTYLE_CardText,
-              textAlign: TextAlign.center,
+
+            Expanded(
+              child: Center(
+                child: Text(
+
+
+
+                  label!,
+                  style: TextStyle(
+                      color: ScaffoldBackGroundColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14),
+                  //style: TEXTSTYLE_CardText,
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ),
           ],
         ),

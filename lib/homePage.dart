@@ -1,3 +1,5 @@
+import 'package:badc_app/loginScreen.dart';
+import 'package:badc_app/style.dart';
 import 'package:flutter/material.dart';
 
 import 'CustomCard.dart';
@@ -20,13 +22,76 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: ScaffoldBackGroundColor,
+        child: ListView(
+          children: [
+            DrawerHeader(
+              child: Image.asset(
+                'assets/logo.png',
+                fit: BoxFit.fitHeight,
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('হোম'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('প্রোফাইল'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('সেটিংস'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('লগআউট'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoginScreen(),
+                ),
+              );
+            },
+            color: ScaffoldBackGroundColor,
+            icon: Icon(
+              Icons.logout,
+            ),
+          ),
+        ],
+        foregroundColor: ScaffoldBackGroundColor,
+        backgroundColor: primaryGreen,
         centerTitle: true,
-        title: Text('হোম পেজ'),
+        title: Text(
+          'হোম পেজ',
+          style: TextStyle(color: ScaffoldBackGroundColor),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -34,15 +99,17 @@ class _HomepageState extends State<Homepage> {
                 children: [
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'বি‌ডি‌সি‌\'র সম্পর্কে',
-                      iconPath: "assets/details.png",
-                      backgroundColor: Color(0xFFECD2A1),
+                      iconPath: "assets/employee.png",
+                      backgroundColor: Color(0xFFECE7A1),
                       ontap: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => BadcDetails(),
-                            ));
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BadcDetails(),
+                          ),
+                        );
                       },
                     ),
                   ),
@@ -51,15 +118,18 @@ class _HomepageState extends State<Homepage> {
                   ),
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'বি‌ডি‌সি‌\'র সেবাসমূহ',
+                      iconColor: colorBlack,
                       iconPath: "assets/customer-service.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Sheba(),
-                            ));
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Sheba(),
+                          ),
+                        );
                       },
                     ),
                   ),
@@ -72,9 +142,10 @@ class _HomepageState extends State<Homepage> {
                 children: [
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'অফিস এবং বিভিন্ন স্থানসমূহ',
-                      iconPath: "assets/location-pin.png",
-                      backgroundColor: Color(0xFFECD2A1),
+                      iconPath: "assets/office-building.png",
+                      backgroundColor: Color(0xFFECE7A1),
                       ontap: () {
                         Navigator.push(
                             context,
@@ -89,8 +160,9 @@ class _HomepageState extends State<Homepage> {
                   ),
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'ইনোভেশন কার্যক্রম ও অর্জনসমূহ',
-                      iconPath: "assets/agriculture.png",
+                      iconPath: "assets/innovation.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {
                         Navigator.push(
@@ -110,9 +182,10 @@ class _HomepageState extends State<Homepage> {
                 children: [
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'বাস্তবায়নী প্রকল্প ও কার্যক্রম',
-                      iconPath: "",
-                      backgroundColor: Color(0xFFECD2A1),
+                      iconPath: "assets/agricultural.png",
+                      backgroundColor: Color(0xFFECE7A1),
                       ontap: () {
                         Navigator.push(
                             context,
@@ -127,8 +200,9 @@ class _HomepageState extends State<Homepage> {
                   ),
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'যোগাযোগ',
-                      iconPath: "",
+                      iconPath: "assets/communication.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {
                         Navigator.push(
@@ -148,8 +222,10 @@ class _HomepageState extends State<Homepage> {
                 children: [
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'ফিডব্যাক',
-                      iconPath: "",
+                      iconSize: 50,
+                      iconPath: "assets/feedback.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {
                         Navigator.push(

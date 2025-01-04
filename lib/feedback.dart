@@ -1,7 +1,9 @@
+import 'package:badc_app/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'CustomCard.dart';
+import 'loginScreen.dart';
 
 class feedback extends StatefulWidget {
   const feedback({super.key});
@@ -15,7 +17,29 @@ class _FeedbackState extends State<feedback> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoginScreen(),
+                ),
+              );
+            },
+            color: ScaffoldBackGroundColor,
+            icon: Icon(
+              Icons.logout,
+            ),
+          ),
+        ],
+        foregroundColor: ScaffoldBackGroundColor,
+        backgroundColor: primaryGreen,
+        centerTitle: true,
+        title: Text(
+          'ফিডব্যাক',
+          style: TextStyle(color: ScaffoldBackGroundColor),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
@@ -27,9 +51,10 @@ class _FeedbackState extends State<feedback> {
                 children: [
                   Expanded(
                     child: CustomCard(
-                      label: 'বিভিন্ন পরামর্শ  ',
-                      iconPath: "",
-                      backgroundColor: Color(0xFFECD2A1),
+                      color: primaryGreen,
+                      label: 'বিভিন্ন পরামর্শ',
+                      iconPath: "assets/employee.png",
+                      backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
                     ),
                   ),
@@ -38,15 +63,15 @@ class _FeedbackState extends State<feedback> {
                   ),
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'সচরাচর জিজ্ঞাসার জন্য এটি একটি প্লাটফর্ম',
-                      iconPath: "",
+                      iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
                     ),
                   ),
                 ],
               ),
-
             ],
           ),
         ),

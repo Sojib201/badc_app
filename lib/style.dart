@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-const colorRed = Color.fromRGBO(231, 28, 36, 1);
+const colorGolden = Color.fromRGBO(184, 150, 63, 1.0);
+const lightGolden=Color(0xFFECE7A1);
 const colorDark = Color.fromRGBO(136, 28, 32, 1);
 const colorGreen = Color.fromRGBO(33, 191, 115, 1);
 const colorBlue = Color.fromRGBO(52, 152, 219, 1.0);
@@ -9,11 +10,15 @@ const colorWhite = Color.fromRGBO(255, 255, 255, 1.0);
 const colorDarkBlue = Color.fromRGBO(44, 62, 80, 1.0);
 const colorLightGray = Color.fromRGBO(135, 142, 150, 1.0);
 const colorLight = Color.fromRGBO(211, 211, 211, 1.0);
+const primaryGreen = Color.fromRGBO(69, 141, 106, 1.0);
+const colorBlack = Colors.black;
+const ScaffoldBackGroundColor = Color.fromRGBO(250, 249, 239, 1.0);
+
 
 TextStyle Head1Text(textColor) {
   return TextStyle(
-    color: textColor,
-    fontSize: 28,
+    color: colorGolden,
+    fontSize: 22,
     fontFamily: 'popins',
     fontWeight: FontWeight.w700,
   );
@@ -31,6 +36,15 @@ TextStyle Head6Text(textColor) {
 TextStyle HeadText7(textColor) {
   return TextStyle(
     color: textColor,
+    fontSize: 14,
+    fontFamily: 'popins',
+    fontWeight: FontWeight.bold,
+  );
+}
+
+TextStyle HeadText6(textColor) {
+  return TextStyle(
+    color: textColor,
     fontSize: 13,
     fontFamily: 'popins',
     fontWeight: FontWeight.w400,
@@ -46,7 +60,7 @@ TextStyle HeadText9(textColor) {
   );
 }
 
-InputDecoration PasswordInputDeceration(label, hinttext, Widget icon,icon1) {
+InputDecoration PasswordInputDeceration(label, hinttext, Widget icon, icon1) {
   return InputDecoration(
     prefixIcon: icon,
     suffixIcon: icon1,
@@ -89,29 +103,35 @@ InputDecoration EmailInputDeceration1(label, hinttext, Widget icon) {
 
 ButtonStyle AppButtonStyle() {
   return ElevatedButton.styleFrom(
-    elevation: 2,
-    padding: EdgeInsets.zero,
-    backgroundColor: Colors.transparent,
+    elevation: 0,
+    padding: EdgeInsets.all(4.5),
+    //padding: EdgeInsets.only(left: 3, right: 3, top: 4, bottom: 5),
+    //backgroundColor: Colors.green.shade600,
+    backgroundColor: primaryGreen,
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(8),
     ),
   );
 }
 
 TextStyle ButtonTextStyle() {
   return TextStyle(
-      color: Colors.black,
+      color: Colors.white,
       fontSize: 14,
       fontFamily: 'poppins',
-      fontWeight: FontWeight.w400);
+      fontWeight: FontWeight.bold);
 }
+
+
 
 Ink SuccessButtonChild(String ButtonText) {
   return Ink(
     decoration: BoxDecoration(
-        color: colorLightGray, borderRadius: BorderRadius.circular(6)),
+      //color: colorWhite,
+      borderRadius: BorderRadius.circular(6),
+    ),
     child: Container(
-      height: 45,
+      height: 40,
       alignment: Alignment.center,
       child: Text(
         ButtonText,
@@ -120,9 +140,6 @@ Ink SuccessButtonChild(String ButtonText) {
     ),
   );
 }
-
-
-
 
 ButtonStyle AppStatusButtonStyle(btnColor) {
   return ElevatedButton.styleFrom(

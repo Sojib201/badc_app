@@ -1,7 +1,9 @@
+import 'package:badc_app/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'CustomCard.dart';
+import 'loginScreen.dart';
 
 class OfficePlace extends StatefulWidget {
   const OfficePlace({super.key});
@@ -15,7 +17,29 @@ class _OfficePlaceState extends State<OfficePlace> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoginScreen(),
+                ),
+              );
+            },
+            color: ScaffoldBackGroundColor,
+            icon: Icon(
+              Icons.logout,
+            ),
+          ),
+        ],
+        foregroundColor: ScaffoldBackGroundColor,
+        backgroundColor: primaryGreen,
+        centerTitle: true,
+        title: Text(
+          'অফিস এবং বিভিন্ন স্থানসমূহ',
+          style: TextStyle(color: ScaffoldBackGroundColor),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
@@ -27,9 +51,10 @@ class _OfficePlaceState extends State<OfficePlace> {
                 children: [
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'মাঠ পর্যায়ের বিভিন্ন অফিস ও স্থাপনাসমূহের জিও লোকেশনসহ ঠিকানা',
-                      iconPath: "",
-                      backgroundColor: Color(0xFFECD2A1),
+                      iconPath: "assets/employee.png",
+                      backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
                     ),
                   ),
@@ -38,8 +63,9 @@ class _OfficePlaceState extends State<OfficePlace> {
                   ),
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'অফিস প্রধানসহ কর্মরত জনবলের তথ্য',
-                      iconPath: "",
+                      iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
                     ),
@@ -54,10 +80,11 @@ class _OfficePlaceState extends State<OfficePlace> {
                 children: [
                   Expanded(
                     child: CustomCard(
+                      color: primaryGreen,
                       label: 'অফিসের কার্যক্রমসহ বিস্তারিত তথ্য',
-                      iconPath: "",
+                      iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
-                      ontap: () async {},
+                      ontap: () {},
                     ),
                   ),
                 ],

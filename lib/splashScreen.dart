@@ -1,12 +1,9 @@
 import 'dart:async';
-
-import 'package:badc_app/homePage.dart';
 import 'package:badc_app/loginScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class splashScreen extends StatefulWidget {
-  const splashScreen({Key? key}) : super(key: key);
+  const splashScreen({super.key});
 
   @override
   State<splashScreen> createState() => _splashScreenState();
@@ -14,26 +11,34 @@ class splashScreen extends StatefulWidget {
 
 class _splashScreenState extends State<splashScreen> {
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
     Timer(
-      Duration(seconds: 3),
+      const Duration(seconds: 3),
       () {
         Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (context) => LoginScreen()),
-            (route) => false);
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LoginScreen(),
+          ),
+          (route) => false,
+        );
       },
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
 
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(30),
         child: Center(
           child: Image.asset(
             "assets/logo.png",
-            height: 170,
-            width: 170,
-            alignment: Alignment.center,
+            height: 160,
+            width: 160,
+            fit: BoxFit.fill,
           ),
         ),
       ),
