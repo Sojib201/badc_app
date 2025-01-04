@@ -65,8 +65,7 @@ class CustomCard extends StatelessWidget {
             Expanded(
               child: Center(
                 child: Text(
-
-
+                  //maxLines: 2,
 
                   label!,
                   style: TextStyle(
