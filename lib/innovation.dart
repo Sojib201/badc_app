@@ -64,7 +64,7 @@ class _InnovationState extends State<Innovation> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'বি‌ডি‌সি‌\'র সহজিকৃত/ডিজিটালাইজড সেবাসমূহের তালিকা ও লিংক',
+                      label: 'কৃষিক্ষেত্রে বিএডিসি\'র অর্জনসমূহ',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
@@ -72,7 +72,6 @@ class _InnovationState extends State<Innovation> {
                   ),
                 ],
               ),
-
               SizedBox(
                 height: 20,
               ),
@@ -81,7 +80,8 @@ class _InnovationState extends State<Innovation> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'কৃষিক্ষেত্রে বিএডিসি\'র অর্জনসমূহ',
+                      label:
+                          'বি‌ডি‌সি‌\'র সহজিকৃত/ডিজিটালাইজড সেবাসমূহের তালিকা ও লিংক',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},

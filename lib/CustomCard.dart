@@ -51,7 +51,7 @@ class CustomCard extends StatelessWidget {
                 shape: BoxShape.circle,
               ),
               child: Padding(
-                padding: const EdgeInsets.all(14),
+                padding: const EdgeInsets.all(13),
                 child: Image.asset(
                   height: iconSize,
                   width: iconSize,
@@ -61,17 +61,15 @@ class CustomCard extends StatelessWidget {
                 ),
               ),
             ),
-
             Expanded(
               child: Center(
                 child: Text(
                   //maxLines: 2,
-
                   label!,
                   style: TextStyle(
                       color: ScaffoldBackGroundColor,
                       fontWeight: FontWeight.bold,
-                      fontSize: 14),
+                      fontSize: 13),
                   //style: TEXTSTYLE_CardText,
                   textAlign: TextAlign.center,
                 ),
