@@ -125,7 +125,7 @@ class _HomepageState extends State<Homepage> {
         centerTitle: true,
 
         title: SizedBox(
-          height: 20,
+          height: 25,
           child: Marquee(
             text: 'বাংলাদেশ কৃষি উন্নয়ন কর্পোরেশন',
             style: TextStyle(color: ScaffoldBackGroundColor),
