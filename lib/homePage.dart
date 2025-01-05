@@ -30,7 +30,7 @@ class _HomepageState extends State<Homepage> {
         child: Column(
           children: [
             DrawerHeader(
-              margin: EdgeInsets.only(left: 60, right: 60),
+              margin: const EdgeInsets.only(left: 60, right: 60),
               child: Image.asset(
                 "assets/logo.png",
                 //height: 20,
@@ -38,29 +38,29 @@ class _HomepageState extends State<Homepage> {
                 fit: BoxFit.fill,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ListTile(
               leading: Icon(Icons.home, color: colorGolden),
-              title: Text(
+              title: const Text(
                 'হোম',
-                style:
-                    TextStyle(color: colorDeepGreen, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: colorDeepGreen, fontWeight: FontWeight.bold),
               ),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.person,
                 color: colorGolden,
               ),
               title: Text(
                 'প্রোফাইল',
-                style:
-                    TextStyle(color: colorDeepGreen, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: colorDeepGreen, fontWeight: FontWeight.bold),
               ),
               onTap: () {
                 Navigator.pop(context);
@@ -68,10 +68,10 @@ class _HomepageState extends State<Homepage> {
             ),
             ListTile(
               leading: Icon(Icons.settings, color: colorGolden),
-              title: Text(
+              title: const Text(
                 'সেটিংস',
-                style:
-                    TextStyle(color: colorDeepGreen, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: colorDeepGreen, fontWeight: FontWeight.bold),
               ),
               onTap: () {
                 Navigator.pop(context);
@@ -81,18 +81,18 @@ class _HomepageState extends State<Homepage> {
               leading: Icon(Icons.logout, color: colorGolden),
               title: Text(
                 'লগআউট',
-                style:
-                    TextStyle(color: colorDeepGreen, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: colorDeepGreen, fontWeight: FontWeight.bold),
               ),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             Spacer(),
-            Align(
+            const Align(
               alignment: Alignment.bottomRight,
               child: Padding(
-                padding: const EdgeInsets.all(10),
+                padding: EdgeInsets.all(10),
                 child: Text(
                   'App version 2024/01/05',
                   style: TextStyle(
@@ -123,7 +123,6 @@ class _HomepageState extends State<Homepage> {
         foregroundColor: ScaffoldBackGroundColor,
         backgroundColor: colorDeepGreen,
         centerTitle: true,
-
         title: SizedBox(
           height: 25,
           child: Marquee(
@@ -134,24 +133,18 @@ class _HomepageState extends State<Homepage> {
             velocity: 50.0,
           ),
         ),
-
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              padding: EdgeInsets.symmetric( vertical: 5),
               decoration: BoxDecoration(
+
                 color: ScaffoldBackGroundColor,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.3),
-                    blurRadius: 2,
-                    //offset: Offset(0, 3),
-                  ),
-                ],
+                borderRadius: BorderRadius.circular(16),
+
               ),
               child: TextField(
                 controller: _searchController,
@@ -159,9 +152,10 @@ class _HomepageState extends State<Homepage> {
                   setState(() {});
                 },
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search, color: primaryGreen),
+
+                  prefixIcon: Icon(Icons.search, color: colorDeepGreen),
                   hintText: 'অনুসন্ধান করুন...',
-                  border: InputBorder.none,
+
                 ),
               ),
             ),
@@ -177,7 +171,7 @@ class _HomepageState extends State<Homepage> {
                         Expanded(
                           child: CustomCard(
                             color: colorDeepGreen,
-                            label: 'বি‌ডি‌সি‌\'র সম্পর্কে',
+                            label: 'বিএডিসি\'র সম্পর্কে',
                             iconPath: "assets/employee.png",
                             backgroundColor: Color(0xFFECE7A1),
                             ontap: () {
@@ -196,9 +190,9 @@ class _HomepageState extends State<Homepage> {
                         Expanded(
                           child: CustomCard(
                             color: colorDeepGreen,
-                            label: 'বি‌ডি‌সি‌\'র সেবাসমূহ',
+                            label: 'বিএডিসি\'র সেবাসমূহ',
                             iconColor: colorBlack,
-                            iconPath:"assets/communication.png",
+                            iconPath: "assets/communication.png",
                             backgroundColor: Color(0xFFECE7A1),
                             ontap: () {
                               Navigator.push(

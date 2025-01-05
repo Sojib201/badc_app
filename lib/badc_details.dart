@@ -1,3 +1,4 @@
+import 'package:badc_app/CustomExpansionTileWidget.dart';
 import 'package:badc_app/CustomListTileWidget.dart';
 import 'package:badc_app/style.dart';
 import 'package:badc_app/vision.dart';
@@ -41,7 +42,7 @@ class _BadcDetailsState extends State<BadcDetails> {
         backgroundColor: colorDeepGreen,
         centerTitle: true,
         title: Text(
-          'বি‌ডি‌সি‌\'র সম্পর্কে',
+          'বিএডিসি\'র সম্পর্কে',
           style: TextStyle(color: ScaffoldBackGroundColor),
         ),
       ),
@@ -51,6 +52,38 @@ class _BadcDetailsState extends State<BadcDetails> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // CustomExpansionTileWidget(
+              //   tileColor: colorDeepGreen,
+              //   children: [
+              //     Padding(
+              //       padding: const EdgeInsets.all(8.0),
+              //       child: Container(
+              //         decoration: BoxDecoration(
+              //             color: ScaffoldBackGroundColor,
+              //             borderRadius: BorderRadius.circular(10)),
+              //         height: 40,
+              //         width: double.infinity,
+              //         child: Text('বিএডিসি\'র পরিচিতি'),
+              //       ),
+              //     ),
+              //     SizedBox(
+              //       height: 20,
+              //     ),
+              //     Padding(
+              //       padding: const EdgeInsets.all(8.0),
+              //       child: Container(
+              //         decoration: BoxDecoration(
+              //             color: ScaffoldBackGroundColor,
+              //             borderRadius: BorderRadius.circular(5)),
+              //         height: 40,
+              //         width: double.infinity,
+              //         child: Text('বিএডিসি\'র পরিচিতি'),
+              //       ),
+              //     ),
+              //   ],
+              //   iconPath: "assets/employee.png",
+              //   title: 'বিএডিসি\'র পরিচিতি',
+              // ),
               CustomListTileWidget(
                 tileColor: colorDeepGreen,
                 onTap: () {
@@ -60,7 +93,7 @@ class _BadcDetailsState extends State<BadcDetails> {
                         builder: (context) => BadcIntro(),
                       ));
                 },
-                title: 'বি‌ডি‌সি‌\'র পরিচিতি',
+                title: 'বিএডিসি\'র পরিচিতি',
                 iconPath: "assets/employee.png",
               ),
               SizedBox(
@@ -98,12 +131,12 @@ class _BadcDetailsState extends State<BadcDetails> {
               //     Expanded(
               //       child: CustomListTileWidget(
               //         onTap: () {},
-              //         title: 'বি‌ডি‌সি‌\'র পরিচিতি',
+              //         title: 'বিএডিসি\'র পরিচিতি',
               //         iconPath: "assets/employee.png",
               //       ),
               //       // child: CustomCard(
               //       //   color: primaryGreen,
-              //       //   label: 'বি‌ডি‌সি‌\'র পরিচিতি',
+              //       //   label: 'বিএডিসি\'র পরিচিতি',
               //       //   iconPath: "assets/employee.png",
               //       //   backgroundColor: Color(0xFFECE7A1),
               //       //   ontap: () {},

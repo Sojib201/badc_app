@@ -98,7 +98,7 @@ class _InnovationState extends State<Innovation> {
                       ));
                 },
                 title:
-                    'বি‌ডি‌সি‌\'র সহজিকৃত/ডিজিটালাইজড সেবাসমূহের\nতালিকা ও লিংক',
+                    'বিএডিসি\'র সহজিকৃত/ডিজিটালাইজড সেবাসমূহের\nতালিকা ও লিংক',
                 iconPath: "assets/employee.png",
               ),
 
@@ -137,7 +137,7 @@ class _InnovationState extends State<Innovation> {
               //       child: CustomCard(
               //         color: primaryGreen,
               //         label:
-              //             'বি‌ডি‌সি‌\'র সহজিকৃত/ডিজিটালাইজড\n সেবাসমূহের তালিকা ও লিংক',
+              //             'বিএডিসি\'র সহজিকৃত/ডিজিটালাইজড\n সেবাসমূহের তালিকা ও লিংক',
               //         iconPath: "assets/employee.png",
               //         backgroundColor: Color(0xFFECE7A1),
               //         ontap: () {},

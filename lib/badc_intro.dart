@@ -19,13 +19,16 @@ class _BadcIntroState extends State<BadcIntro> {
         backgroundColor: colorDeepGreen,
         centerTitle: true,
         title: Text(
-          'বি‌ডি‌সি‌\'র পরিচিতি',
+          'বিএডিসি\'র পরিচিতি',
           style: TextStyle(color: ScaffoldBackGroundColor),
         ),
       ),
       body: Center(
         child: Text(
-          'বি‌ডি‌সি‌\'র পরিচিতি', style: TextStyle(fontSize: 32,),
+          'বিএডিসি\'র পরিচিতি',
+          style: TextStyle(
+            fontSize: 32,
+          ),
         ),
       ),
     );

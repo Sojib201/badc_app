@@ -18,11 +18,22 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'BDAC ',
       theme: ThemeData(
+        inputDecorationTheme: InputDecorationTheme(
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide(color: colorDeepGreen, width: 1)),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide(color: colorDeepGreen, width: 1)),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide(color: colorDeepGreen, width: 1)),
+        ),
         scaffoldBackgroundColor: ScaffoldBackGroundColor,
         //colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const splashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

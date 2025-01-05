@@ -51,7 +51,7 @@ class _SeedsServiceState extends State<SeedsService> {
                 children: [
                   Expanded(
                     child: CustomCard(
-                      label: 'বি‌ডি‌সি‌\'র সম্পর্ক (ভিশন এবং মিশন)',
+                      label: 'বিএডিসি\'র সম্পর্ক (ভিশন এবং মিশন)',
                       iconPath: "",
                       backgroundColor: Color(0xFFECD2A1),
                       ontap: () {},
@@ -62,7 +62,7 @@ class _SeedsServiceState extends State<SeedsService> {
                   ),
                   Expanded(
                     child: CustomCard(
-                      label: 'বি‌ডি‌সি‌\'র সেবাসমূহ',
+                      label: 'বিএডিসি\'র সেবাসমূহ',
                       iconPath: "",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
@@ -200,13 +200,13 @@ class _SeedsServiceState extends State<SeedsService> {
       //     children: [
       //       ElevatedButton(
       //         onPressed: () {},
-      //         child: Text('১.বি‌ডি‌সি‌\'র সম্পর্ক (ভিশন এবং মিশন)'),
+      //         child: Text('১.বিএডিসি\'র সম্পর্ক (ভিশন এবং মিশন)'),
       //
       //       ),
       //       SizedBox(height: 10,),
       //       ElevatedButton(
       //         onPressed: () {},
-      //         child: Text('২. বি‌ডি‌সি‌\'র সেবাসমূহ'),
+      //         child: Text('২. বিএডিসি\'র সেবাসমূহ'),
       //
       //       ),
       //       SizedBox(height: 10,),

@@ -20,7 +20,7 @@ class _BadcDigitalizedServiceState extends State<BadcDigitalizedService> {
         title: SizedBox(
           height: 25,
           child: Marquee(
-            text: 'বি‌ডি‌সি‌\'র সহজিকৃত/ডিজিটালাইজড সেবাসমূহের তালিকা ও লিংক',
+            text: 'বিএডিসি\'র সহজিকৃত/ডিজিটালাইজড সেবাসমূহের তালিকা ও লিংক',
             style: TextStyle(color: ScaffoldBackGroundColor),
             scrollAxis: Axis.horizontal,
             blankSpace: 300,
@@ -30,7 +30,7 @@ class _BadcDigitalizedServiceState extends State<BadcDigitalizedService> {
       ),
       body: Center(
         child: Text(
-          'বি‌ডি‌সি‌\'র সহজিকৃত/ডিজিটালাইজড সেবাসমূহের তালিকা ও লিংক', style: TextStyle(fontSize: 28,),
+          'বিএডিসি\'র সহজিকৃত/ডিজিটালাইজড সেবাসমূহের তালিকা ও লিংক', style: TextStyle(fontSize: 28,),
         ),
       ),
     );

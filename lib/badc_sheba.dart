@@ -42,7 +42,7 @@ class _ShebaState extends State<Sheba> {
         backgroundColor: colorDeepGreen,
         centerTitle: true,
         title: Text(
-          'বি‌ডি‌সি‌\'র সেবাসমূহ',
+          'বিএডিসি\'র সেবাসমূহ',
           style: TextStyle(color: ScaffoldBackGroundColor),
         ),
       ),

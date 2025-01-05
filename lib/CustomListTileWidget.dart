@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class CustomListTileWidget extends StatelessWidget {
   final String? title;
-
   final String? iconPath;
   final String? trailingIconPath;
   final VoidCallback onTap;
