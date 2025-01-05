@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 
 import 'CustomCard.dart';
+import 'CustomListTileWidget.dart';
+import 'badc_achievement.dart';
+import 'badc_digitalized_service.dart';
+import 'innovative_work.dart';
 import 'loginScreen.dart';
 
 class Innovation extends StatefulWidget {
@@ -35,7 +39,7 @@ class _InnovationState extends State<Innovation> {
           ),
         ],
         foregroundColor: ScaffoldBackGroundColor,
-        backgroundColor: primaryGreen,
+        backgroundColor: colorDeepGreen,
         centerTitle: true,
         title: SizedBox(
           height: 20,
@@ -54,48 +58,93 @@ class _InnovationState extends State<Innovation> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomCard(
-                      color: primaryGreen,
-                      label: 'বিভিন্ন ইনোভেটিভ \nকার্যক্রম',
-                      iconPath: "assets/employee.png",
-                      backgroundColor: Color(0xFFECE7A1),
-                      ontap: () {},
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Expanded(
-                    child: CustomCard(
-                      color: primaryGreen,
-                      label: 'কৃষিক্ষেত্রে বিএডিসি\'র \nঅর্জনসমূহ',
-                      iconPath: "assets/employee.png",
-                      backgroundColor: Color(0xFFECE7A1),
-                      ontap: () {},
-                    ),
-                  ),
-                ],
+              CustomListTileWidget(
+                tileColor: colorDeepGreen,
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => InnovativeWork(),
+                      ));
+                },
+                title: 'বিভিন্ন ইনোভেটিভ \nকার্যক্রম',
+                iconPath: "assets/employee.png",
               ),
               SizedBox(
                 height: 20,
               ),
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomCard(
-                      color: primaryGreen,
-                      label:
-                          'বি‌ডি‌সি‌\'র সহজিকৃত/ডিজিটালাইজড\n সেবাসমূহের তালিকা ও লিংক',
-                      iconPath: "assets/employee.png",
-                      backgroundColor: Color(0xFFECE7A1),
-                      ontap: () {},
-                    ),
-                  ),
-                ],
+              CustomListTileWidget(
+                tileColor: colorDeepGreen,
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Achievement(),
+                      ));
+                },
+                title: 'কৃষিক্ষেত্রে বিএডিসি\'র \nঅর্জনসমূহ',
+                iconPath: "assets/employee.png",
               ),
+              SizedBox(
+                height: 20,
+              ),
+              CustomListTileWidget(
+                tileColor: colorDeepGreen,
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BadcDigitalizedService(),
+                      ));
+                },
+                title:
+                    'বি‌ডি‌সি‌\'র সহজিকৃত/ডিজিটালাইজড সেবাসমূহের\nতালিকা ও লিংক',
+                iconPath: "assets/employee.png",
+              ),
+
+
+              // Row(
+              //   children: [
+              //     Expanded(
+              //       child: CustomCard(
+              //         color: primaryGreen,
+              //         label: 'বিভিন্ন ইনোভেটিভ \nকার্যক্রম',
+              //         iconPath: "assets/employee.png",
+              //         backgroundColor: Color(0xFFECE7A1),
+              //         ontap: () {},
+              //       ),
+              //     ),
+              //     SizedBox(
+              //       width: 20,
+              //     ),
+              //     Expanded(
+              //       child: CustomCard(
+              //         color: primaryGreen,
+              //         label: 'কৃষিক্ষেত্রে বিএডিসি\'র \nঅর্জনসমূহ',
+              //         iconPath: "assets/employee.png",
+              //         backgroundColor: Color(0xFFECE7A1),
+              //         ontap: () {},
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // SizedBox(
+              //   height: 20,
+              // ),
+              // Row(
+              //   children: [
+              //     Expanded(
+              //       child: CustomCard(
+              //         color: primaryGreen,
+              //         label:
+              //             'বি‌ডি‌সি‌\'র সহজিকৃত/ডিজিটালাইজড\n সেবাসমূহের তালিকা ও লিংক',
+              //         iconPath: "assets/employee.png",
+              //         backgroundColor: Color(0xFFECE7A1),
+              //         ontap: () {},
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),

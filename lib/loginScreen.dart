@@ -111,8 +111,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     _formKey.currentState?.validate();
                   },
                   borderRadiusCircular: 8,
-                  borderSideColor: primaryGreen,
-                  focusColor: primaryGreen,
+                  borderSideColor: colorDeepGreen,
+                  focusColor: colorDeepGreen,
                   label: 'ইমেইল',
                   hint: 'ইমেইল',
                   prefixIcon: Icons.email,
@@ -132,13 +132,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 25),
                 //
                 CustomTextFormField(
-                  focusColor: primaryGreen,
+                  focusColor: colorDeepGreen,
                   onChanged: (value) {
                     //_validatePassword(value);
                     passwordErrorMessage = value;
                     _formKey.currentState?.validate();
                   },
-                  borderSideColor: primaryGreen,
+                  borderSideColor: colorDeepGreen,
                   label: 'পাসওয়ার্ড',
                   hint: 'পাসওয়ার্ড',
                   isPassword: true,

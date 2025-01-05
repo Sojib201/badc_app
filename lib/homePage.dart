@@ -46,7 +46,7 @@ class _HomepageState extends State<Homepage> {
               title: Text(
                 'হোম',
                 style:
-                    TextStyle(color: primaryGreen, fontWeight: FontWeight.bold),
+                    TextStyle(color: colorDeepGreen, fontWeight: FontWeight.bold),
               ),
               onTap: () {
                 Navigator.pop(context);
@@ -60,7 +60,7 @@ class _HomepageState extends State<Homepage> {
               title: Text(
                 'প্রোফাইল',
                 style:
-                    TextStyle(color: primaryGreen, fontWeight: FontWeight.bold),
+                    TextStyle(color: colorDeepGreen, fontWeight: FontWeight.bold),
               ),
               onTap: () {
                 Navigator.pop(context);
@@ -71,7 +71,7 @@ class _HomepageState extends State<Homepage> {
               title: Text(
                 'সেটিংস',
                 style:
-                    TextStyle(color: primaryGreen, fontWeight: FontWeight.bold),
+                    TextStyle(color: colorDeepGreen, fontWeight: FontWeight.bold),
               ),
               onTap: () {
                 Navigator.pop(context);
@@ -82,7 +82,7 @@ class _HomepageState extends State<Homepage> {
               title: Text(
                 'লগআউট',
                 style:
-                    TextStyle(color: primaryGreen, fontWeight: FontWeight.bold),
+                    TextStyle(color: colorDeepGreen, fontWeight: FontWeight.bold),
               ),
               onTap: () {
                 Navigator.pop(context);
@@ -95,8 +95,8 @@ class _HomepageState extends State<Homepage> {
                 padding: const EdgeInsets.all(10),
                 child: Text(
                   'App version 2024/01/05',
-                  style:
-                      TextStyle(color: primaryGreen, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: colorDeepGreen, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
@@ -121,7 +121,7 @@ class _HomepageState extends State<Homepage> {
           ),
         ],
         foregroundColor: ScaffoldBackGroundColor,
-        backgroundColor: primaryGreen,
+        backgroundColor: colorDeepGreen,
         centerTitle: true,
 
         title: SizedBox(
@@ -135,10 +135,6 @@ class _HomepageState extends State<Homepage> {
           ),
         ),
 
-        // title: Text(
-        //   'বাংলাদেশ কৃষি উন্নয়ন কর্পোরেশন',
-        //   style: TextStyle(color: ScaffoldBackGroundColor),
-        // ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
@@ -180,7 +176,7 @@ class _HomepageState extends State<Homepage> {
                       children: [
                         Expanded(
                           child: CustomCard(
-                            color: primaryGreen,
+                            color: colorDeepGreen,
                             label: 'বি‌ডি‌সি‌\'র সম্পর্কে',
                             iconPath: "assets/employee.png",
                             backgroundColor: Color(0xFFECE7A1),
@@ -199,10 +195,10 @@ class _HomepageState extends State<Homepage> {
                         ),
                         Expanded(
                           child: CustomCard(
-                            color: primaryGreen,
+                            color: colorDeepGreen,
                             label: 'বি‌ডি‌সি‌\'র সেবাসমূহ',
                             iconColor: colorBlack,
-                            iconPath: "assets/customer-service.png",
+                            iconPath:"assets/communication.png",
                             backgroundColor: Color(0xFFECE7A1),
                             ontap: () {
                               Navigator.push(
@@ -223,7 +219,7 @@ class _HomepageState extends State<Homepage> {
                       children: [
                         Expanded(
                           child: CustomCard(
-                            color: primaryGreen,
+                            color: colorDeepGreen,
                             label: 'অফিস এবং বিভিন্ন\nস্থানসমূহ',
                             iconPath: "assets/office-building.png",
                             backgroundColor: Color(0xFFECE7A1),
@@ -241,7 +237,7 @@ class _HomepageState extends State<Homepage> {
                         ),
                         Expanded(
                           child: CustomCard(
-                            color: primaryGreen,
+                            color: colorDeepGreen,
                             label: 'ইনোভেশন কার্যক্রম \nও অর্জনসমূহ',
                             iconPath: "assets/innovation.png",
                             backgroundColor: Color(0xFFECE7A1),
@@ -263,7 +259,7 @@ class _HomepageState extends State<Homepage> {
                       children: [
                         Expanded(
                           child: CustomCard(
-                            color: primaryGreen,
+                            color: colorDeepGreen,
                             label: 'বাস্তবায়নী প্রকল্প \nও কার্যক্রম',
                             iconPath: "assets/agricultural.png",
                             backgroundColor: Color(0xFFECE7A1),
@@ -282,9 +278,9 @@ class _HomepageState extends State<Homepage> {
                         ),
                         Expanded(
                           child: CustomCard(
-                            color: primaryGreen,
+                            color: colorDeepGreen,
                             label: 'যোগাযোগ',
-                            iconPath: "assets/communication.png",
+                            iconPath: "assets/customer-service.png",
                             backgroundColor: Color(0xFFECE7A1),
                             ontap: () {
                               Navigator.push(
@@ -304,7 +300,7 @@ class _HomepageState extends State<Homepage> {
                       children: [
                         Expanded(
                           child: CustomCard(
-                            color: primaryGreen,
+                            color: colorDeepGreen,
                             label: 'ফিডব্যাক',
                             iconSize: 50,
                             iconPath: "assets/feedback.png",

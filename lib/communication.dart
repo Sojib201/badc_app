@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'CustomCard.dart';
+import 'CustomListTileWidget.dart';
+import 'badc_communication.dart';
 import 'loginScreen.dart';
 
 class Communication extends StatefulWidget {
@@ -34,7 +36,7 @@ class _CommunicationState extends State<Communication> {
           ),
         ],
         foregroundColor: ScaffoldBackGroundColor,
-        backgroundColor: primaryGreen,
+        backgroundColor: colorDeepGreen,
         centerTitle: true,
         title: Text(
           'যোগাযোগ',
@@ -47,19 +49,33 @@ class _CommunicationState extends State<Communication> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomCard(
-                      color: primaryGreen,
-                      label: 'বিএডিসি\'র কর্মরত কর্মকর্তাদের সাথে যোগাযোগ \nসংক্রান্ত \'টেলিফোন ডিরেক্টরি\' এ্যাপস্ থাকবে',
-                      iconPath: "assets/employee.png",
-                      backgroundColor: Color(0xFFECE7A1),
-                      ontap: () {},
-                    ),
-                  ),
-                ],
+              CustomListTileWidget(
+                tileColor:colorDeepGreen ,
+
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BadcCommunication(),
+                      ));
+                },
+                title:  'বিএডিসি\'র কর্মরত কর্মকর্তাদের সাথে যোগাযোগ সংক্রান্ত \n\'টেলিফোন ডিরেক্টরি\' এ্যাপস্ থাকবে',
+                iconPath: "assets/employee.png",
               ),
+
+              // Row(
+              //   children: [
+              //     Expanded(
+              //       child: CustomCard(
+              //         color: primaryGreen,
+              //         label: 'বিএডিসি\'র কর্মরত কর্মকর্তাদের সাথে যোগাযোগ \nসংক্রান্ত \'টেলিফোন ডিরেক্টরি\' এ্যাপস্ থাকবে',
+              //         iconPath: "assets/employee.png",
+              //         backgroundColor: Color(0xFFECE7A1),
+              //         ontap: () {},
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),

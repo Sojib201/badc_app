@@ -1,8 +1,11 @@
+import 'package:badc_app/badc_implementation.dart';
 import 'package:badc_app/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:marquee/marquee.dart';
 
 import 'CustomCard.dart';
+import 'CustomListTileWidget.dart';
 import 'loginScreen.dart';
 
 class ImplementationProjects extends StatefulWidget {
@@ -34,11 +37,17 @@ class _ImplementationProjectsState extends State<ImplementationProjects> {
           ),
         ],
         foregroundColor: ScaffoldBackGroundColor,
-        backgroundColor: primaryGreen,
+        backgroundColor: colorDeepGreen,
         centerTitle: true,
-        title: Text(
-          'বাস্তবায়নী প্রকল্প ও কার্যক্রম',
-          style: TextStyle(color: ScaffoldBackGroundColor),
+        title: SizedBox(
+          height: 25,
+          child: Marquee(
+            text: 'বাস্তবায়নী প্রকল্প ও কার্যক্রম',
+            style: TextStyle(color: ScaffoldBackGroundColor),
+            scrollAxis: Axis.horizontal,
+            blankSpace: 300,
+            velocity: 50.0,
+          ),
         ),
       ),
       body: Padding(
@@ -47,20 +56,33 @@ class _ImplementationProjectsState extends State<ImplementationProjects> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomCard(
-                      color: primaryGreen,
-                      label: 'বিএডিসি\'র কর্তৃক বাস্তবায়নাধীন \nসকল প্রকল্প ও কর্মসূচির তালিকা',
-                      iconPath: "assets/employee.png",
-                      backgroundColor: Color(0xFFECE7A1),
-                      ontap: () {},
-                    ),
-                  ),
-                ],
+              CustomListTileWidget(
+                tileColor: colorDeepGreen,
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BadcImplementation(),
+                      ));
+                },
+                title:
+                    'বিএডিসি\'র কর্তৃক বাস্তবায়নাধীন \nসকল প্রকল্প ও কর্মসূচির তালিকা',
+                iconPath: "assets/employee.png",
               ),
+
+              // Row(
+              //   children: [
+              //     Expanded(
+              //       child: CustomCard(
+              //         color: primaryGreen,
+              //         label: 'বিএডিসি\'র কর্তৃক বাস্তবায়নাধীন \nসকল প্রকল্প ও কর্মসূচির তালিকা',
+              //         iconPath: "assets/employee.png",
+              //         backgroundColor: Color(0xFFECE7A1),
+              //         ontap: () {},
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),

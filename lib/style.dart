@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 
 const colorGolden = Color.fromRGBO(184, 150, 63, 1.0);
 const lightGolden=Color(0xFFECE7A1);
-const colorDark = Color.fromRGBO(136, 28, 32, 1);
+const primaryColor = Color.fromRGBO(120, 118, 51, 1.0);
 const colorGreen = Color.fromRGBO(33, 191, 115, 1);
 const colorBlue = Color.fromRGBO(52, 152, 219, 1.0);
 const colorOrange = Color.fromRGBO(230, 126, 34, 1.0);
 const colorWhite = Color.fromRGBO(255, 255, 255, 1.0);
 const colorDarkBlue = Color.fromRGBO(44, 62, 80, 1.0);
 const colorLightGray = Color.fromRGBO(135, 142, 150, 1.0);
-const colorLight = Color.fromRGBO(211, 211, 211, 1.0);
+const colorDeepGreen = Color.fromRGBO(14, 126, 73, 1.0);
 const primaryGreen = Color.fromRGBO(69, 141, 106, 1.0);
+//const primaryGreen = Colors.green;
 const colorBlack = Colors.black;
 const ScaffoldBackGroundColor = Color.fromRGBO(250, 249, 239, 1.0);
 
@@ -107,7 +108,7 @@ ButtonStyle AppButtonStyle() {
     padding: EdgeInsets.all(4.5),
     //padding: EdgeInsets.only(left: 3, right: 3, top: 4, bottom: 5),
     //backgroundColor: Colors.green.shade600,
-    backgroundColor: primaryGreen,
+    backgroundColor: colorDeepGreen,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(8),
     ),

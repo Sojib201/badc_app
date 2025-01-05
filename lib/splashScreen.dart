@@ -50,7 +50,7 @@ class _splashScreenState extends State<splashScreen> {
             child: LinearProgressIndicator(
               minHeight: 3,
               backgroundColor: Colors.grey[300],
-              valueColor: const AlwaysStoppedAnimation(primaryGreen),
+              valueColor: const AlwaysStoppedAnimation(colorDeepGreen),
             ),
           ),
           // const Spacer(),
