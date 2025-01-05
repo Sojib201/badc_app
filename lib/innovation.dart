@@ -1,6 +1,7 @@
 import 'package:badc_app/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:marquee/marquee.dart';
 
 import 'CustomCard.dart';
 import 'loginScreen.dart';
@@ -36,9 +37,15 @@ class _InnovationState extends State<Innovation> {
         foregroundColor: ScaffoldBackGroundColor,
         backgroundColor: primaryGreen,
         centerTitle: true,
-        title: Text(
-          'ইনোভেশন কার্যক্রম ও অর্জনসমূহ',
-          style: TextStyle(color: ScaffoldBackGroundColor),
+        title: SizedBox(
+          height: 20,
+          child: Marquee(
+            text: 'ইনোভেশন কার্যক্রম ও অর্জনসমূহ',
+            style: TextStyle(color: ScaffoldBackGroundColor),
+            scrollAxis: Axis.horizontal,
+            blankSpace: 300,
+            velocity: 50.0,
+          ),
         ),
       ),
       body: Padding(
@@ -52,7 +59,7 @@ class _InnovationState extends State<Innovation> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'বিভিন্ন ইনোভেটিভ কার্যক্রম',
+                      label: 'বিভিন্ন ইনোভেটিভ \nকার্যক্রম',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
@@ -64,7 +71,7 @@ class _InnovationState extends State<Innovation> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'কৃষিক্ষেত্রে বিএডিসি\'র অর্জনসমূহ',
+                      label: 'কৃষিক্ষেত্রে বিএডিসি\'র \nঅর্জনসমূহ',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
@@ -81,7 +88,7 @@ class _InnovationState extends State<Innovation> {
                     child: CustomCard(
                       color: primaryGreen,
                       label:
-                          'বি‌ডি‌সি‌\'র সহজিকৃত/ডিজিটালাইজড সেবাসমূহের তালিকা ও লিংক',
+                          'বি‌ডি‌সি‌\'র সহজিকৃত/ডিজিটালাইজড\n সেবাসমূহের তালিকা ও লিংক',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},

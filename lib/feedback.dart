@@ -64,7 +64,7 @@ class _FeedbackState extends State<feedback> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'সচরাচর জিজ্ঞাসার জন্য এটি একটি প্লাটফর্ম',
+                      label: 'সচরাচর জিজ্ঞাসার জন্য \nএটি একটি প্লাটফর্ম',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},

@@ -52,7 +52,7 @@ class _ShebaState extends State<Sheba> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'বীজ ও উদ্যান সংক্রান্ত সেবা',
+                      label: 'বীজ ও উদ্যান \nসংক্রান্ত সেবা',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
@@ -64,7 +64,7 @@ class _ShebaState extends State<Sheba> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'সার সংক্রান্ত সেবা',
+                      label: 'সার সংক্রান্ত \nসেবা',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
@@ -80,7 +80,7 @@ class _ShebaState extends State<Sheba> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'সেচ সংক্রান্ত সেবা',
+                      label: 'সেচ সংক্রান্ত \nসেবা',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
@@ -92,7 +92,7 @@ class _ShebaState extends State<Sheba> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'দাপ্তরিক অন্যান্য সেবা',
+                      label: 'দাপ্তরিক অন্যান্য \nসেবা',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},

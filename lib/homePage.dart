@@ -1,6 +1,7 @@
 import 'package:badc_app/loginScreen.dart';
 import 'package:badc_app/style.dart';
 import 'package:flutter/material.dart';
+import 'package:marquee/marquee.dart';
 
 import 'CustomCard.dart';
 import 'badc_details.dart';
@@ -21,47 +22,83 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   final TextEditingController _searchController = TextEditingController();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
         backgroundColor: ScaffoldBackGroundColor,
-        child: ListView(
+        child: Column(
           children: [
             DrawerHeader(
+              margin: EdgeInsets.only(left: 60, right: 60),
               child: Image.asset(
-                'assets/logo.png',
-                fit: BoxFit.fitHeight,
+                "assets/logo.png",
+                //height: 20,
+                width: 150,
+                fit: BoxFit.fill,
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
             ListTile(
-              leading: Icon(Icons.home),
-              title: Text('হোম'),
+              leading: Icon(Icons.home, color: colorGolden),
+              title: Text(
+                'হোম',
+                style:
+                    TextStyle(color: primaryGreen, fontWeight: FontWeight.bold),
+              ),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('প্রোফাইল'),
+              leading: Icon(
+                Icons.person,
+                color: colorGolden,
+              ),
+              title: Text(
+                'প্রোফাইল',
+                style:
+                    TextStyle(color: primaryGreen, fontWeight: FontWeight.bold),
+              ),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('সেটিংস'),
+              leading: Icon(Icons.settings, color: colorGolden),
+              title: Text(
+                'সেটিংস',
+                style:
+                    TextStyle(color: primaryGreen, fontWeight: FontWeight.bold),
+              ),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('লগআউট'),
+              leading: Icon(Icons.logout, color: colorGolden),
+              title: Text(
+                'লগআউট',
+                style:
+                    TextStyle(color: primaryGreen, fontWeight: FontWeight.bold),
+              ),
               onTap: () {
                 Navigator.pop(context);
               },
+            ),
+            Spacer(),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Text(
+                  'App version 2024/01/05',
+                  style:
+                      TextStyle(color: primaryGreen, fontWeight: FontWeight.bold),
+                ),
+              ),
             ),
           ],
         ),
@@ -86,10 +123,22 @@ class _HomepageState extends State<Homepage> {
         foregroundColor: ScaffoldBackGroundColor,
         backgroundColor: primaryGreen,
         centerTitle: true,
-        title: Text(
-          'হোম পেজ',
-          style: TextStyle(color: ScaffoldBackGroundColor),
+
+        title: SizedBox(
+          height: 20,
+          child: Marquee(
+            text: 'বাংলাদেশ কৃষি উন্নয়ন কর্পোরেশন',
+            style: TextStyle(color: ScaffoldBackGroundColor),
+            scrollAxis: Axis.horizontal,
+            blankSpace: 300,
+            velocity: 50.0,
+          ),
         ),
+
+        // title: Text(
+        //   'বাংলাদেশ কৃষি উন্নয়ন কর্পোরেশন',
+        //   style: TextStyle(color: ScaffoldBackGroundColor),
+        // ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
@@ -103,17 +152,15 @@ class _HomepageState extends State<Homepage> {
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.3),
-                    blurRadius: 5,
-                    offset: Offset(0, 3),
+                    blurRadius: 2,
+                    //offset: Offset(0, 3),
                   ),
                 ],
               ),
               child: TextField(
                 controller: _searchController,
                 onChanged: (value) {
-                  setState(() {
-
-                  });
+                  setState(() {});
                 },
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search, color: primaryGreen),
@@ -177,7 +224,7 @@ class _HomepageState extends State<Homepage> {
                         Expanded(
                           child: CustomCard(
                             color: primaryGreen,
-                            label: 'অফিস এবং বিভিন্ন স্থানসমূহ',
+                            label: 'অফিস এবং বিভিন্ন\nস্থানসমূহ',
                             iconPath: "assets/office-building.png",
                             backgroundColor: Color(0xFFECE7A1),
                             ontap: () {
@@ -195,7 +242,7 @@ class _HomepageState extends State<Homepage> {
                         Expanded(
                           child: CustomCard(
                             color: primaryGreen,
-                            label: 'ইনোভেশন কার্যক্রম ও অর্জনসমূহ',
+                            label: 'ইনোভেশন কার্যক্রম \nও অর্জনসমূহ',
                             iconPath: "assets/innovation.png",
                             backgroundColor: Color(0xFFECE7A1),
                             ontap: () {
@@ -217,7 +264,7 @@ class _HomepageState extends State<Homepage> {
                         Expanded(
                           child: CustomCard(
                             color: primaryGreen,
-                            label: 'বাস্তবায়নী প্রকল্প ও কার্যক্রম',
+                            label: 'বাস্তবায়নী প্রকল্প \nও কার্যক্রম',
                             iconPath: "assets/agricultural.png",
                             backgroundColor: Color(0xFFECE7A1),
                             ontap: () {

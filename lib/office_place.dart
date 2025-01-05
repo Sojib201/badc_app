@@ -52,7 +52,7 @@ class _OfficePlaceState extends State<OfficePlace> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'মাঠ পর্যায়ের বিভিন্ন অফিস ও স্থাপনাসমূহের জিও লোকেশনসহ ঠিকানা',
+                      label: 'অফিস ও স্থাপনাসমূহের \nলোকেশনসহ ঠিকানা',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
@@ -64,7 +64,7 @@ class _OfficePlaceState extends State<OfficePlace> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'অফিস প্রধানসহ কর্মরত জনবলের তথ্য',
+                      label: 'অফিস প্রধানসহ কর্মরত \nজনবলের তথ্য',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},
@@ -81,7 +81,7 @@ class _OfficePlaceState extends State<OfficePlace> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'অফিসের কার্যক্রমসহ বিস্তারিত তথ্য',
+                      label: 'অফিসের কার্যক্রমসহ \nবিস্তারিত তথ্য',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},

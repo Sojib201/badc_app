@@ -52,7 +52,7 @@ class _CommunicationState extends State<Communication> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'বিএডিসি\'র কর্মরত কর্মকর্তাদের সাথে যোগাযোগ সংক্রান্ত \'টেলিফোন ডিরেক্টরি\' এ্যাপস্ থাকবে',
+                      label: 'বিএডিসি\'র কর্মরত কর্মকর্তাদের সাথে যোগাযোগ \nসংক্রান্ত \'টেলিফোন ডিরেক্টরি\' এ্যাপস্ থাকবে',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},

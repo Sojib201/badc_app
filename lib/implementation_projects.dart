@@ -53,7 +53,7 @@ class _ImplementationProjectsState extends State<ImplementationProjects> {
                   Expanded(
                     child: CustomCard(
                       color: primaryGreen,
-                      label: 'বিএডিসি\'র কর্তৃক বাস্তবায়নাধীন সকল প্রকল্প ও কর্মসূচির তালিকা',
+                      label: 'বিএডিসি\'র কর্তৃক বাস্তবায়নাধীন \nসকল প্রকল্প ও কর্মসূচির তালিকা',
                       iconPath: "assets/employee.png",
                       backgroundColor: Color(0xFFECE7A1),
                       ontap: () {},

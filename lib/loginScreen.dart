@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 90),
+          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 100),
           child: Form(
             key: _formKey,
             child: Column(
@@ -94,25 +94,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: 180,
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 60,
                 ),
-                Text(
-                  "গণপ্রজাতন্ত্রী বাংলাদেশ সরকার",
-                  style: Head1Text(colorDarkBlue),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                // CustomTextFormField(
-                //   onChanged: (value) => _validateEmail(value),
-                //   borderSideColor: Colors.grey,
-                //   label: 'Email',
-                //   hint: 'Email',
-                //   prefixIcon: Icons.email,
-                //   controller: emailController,
-                //   inputType: TextInputType.emailAddress,
-                //   validator: (_) => emailErrorMessage,
+                // Text(
+                //   "গণপ্রজাতন্ত্রী বাংলাদেশ সরকার",
+                //   style: Head1Text(colorDarkBlue),
                 // ),
+                // SizedBox(
+                //   height: 40,
+                // ),
+
                 CustomTextFormField(
                   onChanged: (value) {
                     //_validateEmail(value);
@@ -179,21 +170,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 //     style: TextStyle(color: Colors.red),
                 //   ),
 
+                // const SizedBox(
+                //   height: 18,
+                // ),
+                // Padding(
+                //   padding: const EdgeInsets.only(left: 190),
+                //   child: InkWell(
+                //     onTap: () {},
+                //     child: Text(
+                //       "পাসওয়ার্ড ভুলে গেছেন?",
+                //       style: HeadText6(colorLightGray),
+                //     ),
+                //   ),
+                // ),
                 const SizedBox(
-                  height: 18,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 190),
-                  child: InkWell(
-                    onTap: () {},
-                    child: Text(
-                      "পাসওয়ার্ড ভুলে গেছেন?",
-                      style: HeadText6(colorLightGray),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
+                  height: 25,
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -212,66 +203,66 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
 
-                const SizedBox(
-                  height: 16,
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  child: Column(
-                    children: [
-                      Card(
-                        color: Colors.transparent,
-                        elevation: 0,
-                        child: Container(
-                          height: 48,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: primaryGreen),
-                            //color: colorWhite,
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: InkWell(
-                            onTap: () {},
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  'assets/img.png',
-                                  height: 30,
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  'গুগল দিয়ে সাইন ইন করুন',
-                                  style: HeadText6(colorDarkBlue),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "অ্যাকাউন্ট নেই?",
-                            style: HeadText6(colorDarkBlue),
-                          ),
-                          InkWell(
-                            onTap: () {},
-                            child: Text(
-                              " নিবন্ধন করুন",
-                              style: HeadText7(primaryGreen),
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
+                // const SizedBox(
+                //   height: 16,
+                // ),
+                // Container(
+                //   alignment: Alignment.center,
+                //   child: Column(
+                //     children: [
+                //       Card(
+                //         color: Colors.transparent,
+                //         elevation: 0,
+                //         child: Container(
+                //           height: 48,
+                //           decoration: BoxDecoration(
+                //             border: Border.all(color: primaryGreen),
+                //             //color: colorWhite,
+                //             borderRadius: BorderRadius.circular(8),
+                //           ),
+                //           child: InkWell(
+                //             onTap: () {},
+                //             child: Row(
+                //               mainAxisAlignment: MainAxisAlignment.center,
+                //               children: [
+                //                 Image.asset(
+                //                   'assets/img.png',
+                //                   height: 30,
+                //                 ),
+                //                 const SizedBox(
+                //                   width: 10,
+                //                 ),
+                //                 Text(
+                //                   'গুগল দিয়ে সাইন ইন করুন',
+                //                   style: HeadText6(colorDarkBlue),
+                //                 ),
+                //               ],
+                //             ),
+                //           ),
+                //         ),
+                //       ),
+                //       const SizedBox(
+                //         height: 30,
+                //       ),
+                //       Row(
+                //         mainAxisAlignment: MainAxisAlignment.center,
+                //         children: [
+                //           Text(
+                //             "অ্যাকাউন্ট নেই?",
+                //             style: HeadText6(colorDarkBlue),
+                //           ),
+                //           InkWell(
+                //             onTap: () {},
+                //             child: Text(
+                //               " নিবন্ধন করুন",
+                //               style: HeadText7(primaryGreen),
+                //             ),
+                //           ),
+                //         ],
+                //       )
+                //     ],
+                //   ),
+                // ),
               ],
             ),
           ),

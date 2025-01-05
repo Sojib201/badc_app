@@ -69,7 +69,7 @@ class CustomCard extends StatelessWidget {
                   style: TextStyle(
                       color: ScaffoldBackGroundColor,
                       fontWeight: FontWeight.bold,
-                      fontSize: 13),
+                      fontSize: 14),
                   //style: TEXTSTYLE_CardText,
                   textAlign: TextAlign.center,
                 ),
